@@ -128,7 +128,7 @@ namespace EMTracker.Controllers
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (sample == null)
             {
-                return NotFound();
+                return NotFound(); //update
             }
 
             return View(sample);

@@ -115,7 +115,29 @@ namespace EMTracker.Controllers
             }
             return View(sample);
         }
+        [HttpPost]
+        public IActionResult TestDelete(int Id)
+        {
+            try
+            {
+                using (_context)
+                {
+                    var User = _context.Sample.Find(Id);         //fetching the user with Id   
+                    if (User != null)
+                    {
+                        _context.Sample.Remove(User);              //deleting from db  
+                        _context.SaveChanges();
+                        return RedirectToAction(nameof(Index));
+                    }
+                    return RedirectToAction(nameof(Index));
+                }
+            }
 
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
         // GET: Samples/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {

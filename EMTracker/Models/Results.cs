@@ -9,7 +9,6 @@ namespace EMTracker.Models
     {
         public string Component { get; set; }
         public double value { get; set; }
-        public Sample
-            GetUOM;
+        public Sample Sample { get; set; }
     }
 }

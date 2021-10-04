@@ -7,11 +7,8 @@ namespace EMTracker.Models
 {
     public class Analysis
     {
-        public Login
-            GetFName;
-        public Login
-            GetLName;
-        public Sample
-            GetType;
+        public Login Login { get; set; }
+   
+        public Sample Sample { get; set; }
     }
 }

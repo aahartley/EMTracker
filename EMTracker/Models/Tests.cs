@@ -7,14 +7,15 @@ namespace EMTracker.Models
 {
     public class Tests
     {
-        public Sample
-            GetSample;
-        public Analysis
-             GetAnalysis;
+        //relating back to sample for both sample and analysis
+        public Sample Sample { get; set; }
+    
+        public Analysis Analysis { get; set; }
+             
         public string Instrument { get; set; }
         public DateTimeOffset Time { get; set; }
-        public Login
-            GetUserID;
+        public Login Login { get; set; }
+    
 
 
 

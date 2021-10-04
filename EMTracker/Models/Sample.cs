@@ -9,12 +9,15 @@ namespace EMTracker.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Location { get;}
+        //namespace? proper syntax for class relation
+        public Location Location { get; set; }
         public string Type { get; }
-        public string Amount { get; set; }
+        public double Amount { get; set; }
         public string UOM { get; set; }
         public string notes { get; set; }
-        public string collectionTime { get; set; }
-        public string UserID { get;}
+        public DateTimeOffset collectionTime { get; set; }
+    //Referenced from Login
+        public Login UserID { get; set; }
+        public string status { get;set;}
     }
 }

@@ -12,9 +12,9 @@ namespace EMTracker.Data
         public EMTrackerContext (DbContextOptions<EMTrackerContext> options)
             : base(options)
         {
-            Database.EnsureCreated();
+            Database.EnsureCreated( );
         }
 
-        public DbSet<EMTracker.Models.Sample> Sample { get; set; }
+        public DbSet<Sample> Sample { get; set; }
     }
 }

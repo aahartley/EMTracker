@@ -7,7 +7,7 @@ namespace EMTracker.Models
 {
     public class Login
     {
-        public string UserID { get; set; }
+        public int id { get; set; }
         public string Password { get; set; }
         public string FName { get; set; }
         public string LName { get; set; }

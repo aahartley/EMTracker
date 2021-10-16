@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EMTracker.Data;
 using EMTracker.Models;
@@ -137,6 +136,13 @@ namespace EMTracker.Controllers
             {
                 return null;
             }
+        }
+        public async Task<IActionResult> TestFunction(int id)
+        {
+            ViewBag.test = id;
+            List<Sample> model = await _context.Sample.ToListAsync();
+            return base.View(nameof(Index), model);
+
         }
         // GET: Samples/Delete/5
         public async Task<IActionResult> Delete(int? id)

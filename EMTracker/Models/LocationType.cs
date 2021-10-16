@@ -7,6 +7,7 @@ namespace EMTracker.Models
 {
     public class LocationType
     {
+        public int id { get; set; }
         public string LType { get; set; }
     }
 }

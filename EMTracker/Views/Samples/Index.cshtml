@@ -22,34 +22,39 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Location)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a href="#" onclick=Delete(@item.Id)>Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a href="#" onclick=Delete(@item.Id)>Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+<a  href="@Url.Action("TestFunction", "Samples",new {id=5})">Speaker Evaluations</a>
+<p>
+    @ViewBag.test
+</p>
 <script>
-    function Delete(Id)  
-   {  
-       $.post("/Samples/TestDelete", { Id: Id }, function (data) {      //passing the id of the selected user to the action method for deletion  
-           if (data != null) {  
-               location.reload();  
-               alert("User Deleted");  
-           }  
-           else {  
-               alert("Error");  
-           }  
-       });  
-   }  
+
+    function Delete(Id) {
+        $.post("/Samples/TestDelete", { Id: Id }, function (data) {      //passing the id of the selected user to the action method for deletion
+            if (data != null) {
+                location.reload();
+                alert("User Deleted");
+            }
+            else {
+                alert("Error");
+            }
+        });
+    }
 </script>
